@@ -1,3 +1,5 @@
+package Arrays;
+
 public class BestTimeToBuyAndSell {
     public static void main(String [] args){
         int [] stockPrices = {7,1,5,3,6,19,4};
