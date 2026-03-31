@@ -1,5 +1,7 @@
 package Arrays;
+
 import java.util.HashSet;
+
 
 public class ContainsDuplicate {
     public static void main(String args[]){
