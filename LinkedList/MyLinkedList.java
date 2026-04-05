@@ -37,6 +37,17 @@ public class MyLinkedList{
             System.out.print(current.val + " ");
             current = current.next;
         }
+        System.out.println();
     }
+
+    public static void printValues(ListNode head){
+        ListNode curr = head;
+        while(curr != null){
+            System.out.print(curr.val + " ");
+            curr = curr.next;
+        }
+        System.out.println();
+    }
+
 }
 
