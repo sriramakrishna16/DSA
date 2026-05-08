@@ -11,7 +11,6 @@ public class ContainsDuplicate {
 
     // public static boolean checkDuplicates(int [] nums){
     //     HashMap<Integer, Integer> map = new HashMap<>();
-
     //     for(int x : nums){
 
     //         boolean duplicate = map.containsKey(x);
