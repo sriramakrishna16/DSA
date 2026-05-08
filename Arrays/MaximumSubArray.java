@@ -9,7 +9,7 @@ public class MaximumSubArray {
 
     //Brute Force , for every i , we find all sums to end by targetting maxSum only for each subarray
     //after i 1 passes , next i 2 , we keep update maxSUm if high found
-    //till it do n*n times to get all that is o(n^2) 
+    //till it do n*n times to get all that is o(n^2)
 
     // public static int maxSum(int[] nums){
     //     int maxSum = Integer.MIN_VALUE;
