@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 
-// brute force approach order of n2
+// brute force approach order of n * n 
 //for returning all possible items , we use List of int [] arrays that is arraylist 
 //only one possible solution , return immediately after finding . only use array that is int[] result 
 
