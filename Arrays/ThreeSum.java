@@ -11,8 +11,7 @@ public class ThreeSum {
         System.out.println(list);
     }
     }
-
-    //brute force
+    //Brute force approach
 
     // public static List<int[]> findSum(int[] nums){
     //     Arrays.sort(nums);
@@ -36,7 +35,7 @@ public class ThreeSum {
     //     return list;
     // }
 
-    //optimised version using two pointers
+    //optimised version using two pointers 
     //steps it must be sorted , if target is bigger , left ++ , if smaller right --
     //in this way we can find pairs for our target.
 
@@ -80,5 +79,4 @@ public class ThreeSum {
         }
         return result;
     }
-
 }
