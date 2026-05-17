@@ -14,29 +14,57 @@ public class LongestIncreasingSubsequence {
         System.out.println(longestSeq);
     }
 
-    public static int findSequence(int nums[]){
+    // public static int findSequence(int nums[]){
         
+    //     int n = nums.length;
+
+    //     int dp [] = new int [n];
+
+    //     for (int i = 0 ; i<n ; i++){
+    //         dp[i] = 1;
+    //     }
+
+    //     for(int i = 0 ; i<n ; i++){
+    //         for(int j = 0 ; j < i ; j++){
+    //             if(nums[j] < nums[i]){
+    //                 dp[i] = Math.max(dp[i], dp[j] + 1);
+    //             }
+    //         }
+    //     }
+
+    //     int max = 1;
+
+    //     for(int x : dp){
+    //         max = Math.max(max, x);
+    //     }
+    //     return max;
+    // }
+
+
+    //using binary approach for optimization
+
+     public static int findSequence(int nums[]){
         int n = nums.length;
+        int[] lis = new int [n];
+        int size = 0;
 
-        int dp [] = new int [n];
+        for(int num : nums){
+            int left = 0;
+            int right = size;
 
-        for (int i = 0 ; i<n ; i++){
-            dp[i] = 1;
-        }
-
-        for(int i = 0 ; i<n ; i++){
-            for(int j = 0 ; j < i ; j++){
-                if(nums[j] < nums[i]){
-                    dp[i] = Math.max(dp[i], dp[j] + 1);
+            while(left < right){
+                int mid = left + (right - left) / 2; // 2,3,5
+                if(lis[mid] < num){
+                    left = mid + 1;
+                }else{
+                    right = mid;
                 }
             }
+            lis[left] = num;
+            if(left == size){
+                size++;
+            }
         }
-
-        int max = 1;
-
-        for(int x : dp){
-            max = Math.max(max, x);
-        }
-        return max;
-    }
+        return size;
+     }
 }
