@@ -2,7 +2,7 @@ package SlidingWindow;
 
 import java.util.HashMap;
 
-public class LongestSubstringWithoutREpeatingCharcaters{
+public class LongestSubstringWithoutRepeatingCharcaters{
     public static void main(String[] args){
         String string = "abba";
         int max = findMax(string);
@@ -11,7 +11,6 @@ public class LongestSubstringWithoutREpeatingCharcaters{
 
     //brute force
 
-    //a,b,c,a,b,c,b,b
     // public static int findMax(String s){
     //     int m = s.length();
     //     int max = 0;
