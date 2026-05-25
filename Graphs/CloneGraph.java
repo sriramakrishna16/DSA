@@ -4,6 +4,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
+//problem, given a graph contains values and its directions to reference nodes,
+// solution, return clone graph exactly same as given graph in another location. Not to print directly 
+
+//node structure
 class Node{
     public int val;
     public List<Node> neighbors;
@@ -22,10 +26,14 @@ class Node{
     }
 }
 public class CloneGraph {
+
+    //initializing original graph using node structure
     public static void main(String args[]){
 
         Node node1 = new Node(1);
-        Node node2 = new Node(2);
+        Node node2 = new Node(2);  //  1 - 2
+                                   //  |   |
+                                   //  4 - 3
         Node node3 = new Node(3);
         Node node4 = new Node(4);
 
@@ -48,6 +56,9 @@ public class CloneGraph {
         System.out.println("original - graph");
         printGraph(node1 , new HashSet<>()); //original graph
     }
+
+    //printing method for graphs
+
     public static void printGraph(Node node, HashSet<Integer> visited){
         if(node == null || visited.contains(node.val)){
             return;
@@ -67,6 +78,8 @@ public class CloneGraph {
         }
     }
 
+    //Solution 
+    
     static HashMap<Node, Node> map = new HashMap<>();
 
     public static Node cloneGraph(Node node1){
