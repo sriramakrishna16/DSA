@@ -13,21 +13,46 @@ public class JumpGame {
         boolean ans = jump(nums);
         System.out.println(ans);
     }
+
+    
+    // public static boolean jump(int[] nums){
+    //     int len = nums.length;
+    //     boolean [] dp = new boolean [len];
+    //     Arrays.fill(dp,false);
+    //     dp[0] = true;
+
+    //     for(int i = 0; i < len-1 ;i++){
+    //         if(dp[i] == true){
+    //             int maxJump = Math.min(len-1, i + nums[i]); //2
+    //             for(int j = i + 1; j <= maxJump;j++){ //
+    //                     dp[j] = true;
+    //             }
+    //         }
+    //     }
+    //     return dp[len - 1];
+    // }
+
+    //optimised version using greedy approach
+
     public static boolean jump(int[] nums){
         int len = nums.length;
-        boolean [] dp = new boolean [len];
-        Arrays.fill(dp,false);
-        dp[0] = true;
 
-        for(int i = 0; i < len-1 ;i++){
-            if(dp[i] == true){
-                int maxJump = Math.min(len-1, i + nums[i]); //2
-                for(int j = i + 1; j <= maxJump;j++){ //
-                        dp[j] = true;
-                }
+        int maxReach = 0;
+        
+
+        for(int i = 0; i<len; i++){
+
+            if(i > maxReach){
+                return false;
             }
-        }
-        return dp[len - 1];
-    }
 
+            maxReach = Math.max(i + nums[i], maxReach);
+
+            if(maxReach >= len-1){
+                return true;
+            }
+
+        }
+        return true;
+    }
 }
