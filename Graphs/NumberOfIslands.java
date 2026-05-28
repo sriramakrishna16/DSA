@@ -1,4 +1,7 @@
 package Graphs;
+//problem , to find number of islands inthe given matrix
+// 1 represented as land and 0 represented as water 
+//if land is surrounded by water all sides , it can be 1 island
 
 public class NumberOfIslands {
 
@@ -23,6 +26,7 @@ public class NumberOfIslands {
 
         boolean [][] land = new boolean[row][col];
 
+        //for every island we track all connected 1's , then converts into true and increase count 
         for(int r = 0; r<row ; r++){
             for(int c = 0; c<col; c++){
                 if(!land[r][c] && islands[r][c]!= 0){
