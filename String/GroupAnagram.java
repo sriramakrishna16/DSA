@@ -15,17 +15,43 @@ public class GroupAnagram {
         List<List<String>> ans = groupStrings(strs);
         System.out.println(ans);
     }
+    // public static List<List<String>> groupStrings(String[] strs){
+    //     Map<String, List<String>> map = new HashMap<>();
+
+    //     for(String str : strs){
+    //         char[] arr = str.toCharArray();
+    //         Arrays.sort(arr);
+
+    //         String key = new String(arr);
+
+    //         map.putIfAbsent(key, new ArrayList<>());
+    //         map.get(key).add(str);
+    //     }
+
+    //     return new ArrayList<>(map.values());
+    // }
+
+    //optimised version
+    
     public static List<List<String>> groupStrings(String[] strs){
         Map<String, List<String>> map = new HashMap<>();
 
         for(String str : strs){
-            char[] arr = str.toCharArray();
-            Arrays.sort(arr);
+            int[] freq = new int[26];
 
-            String key = new String(arr);
+            for(char ch : str.toCharArray()){
+                freq[ch - 'a']++;
+            }
 
-            map.putIfAbsent(key, new ArrayList<>());
-            map.get(key).add(str);
+            StringBuilder sb = new StringBuilder();
+
+            for(int i : freq){
+                sb.append("*").append(i); // *0*0*0*1*......
+            }
+
+            String key = sb.toString();
+
+            map.computeIfAbsent(key, k -> new ArrayList<>()).add(str);
         }
 
         return new ArrayList<>(map.values());
