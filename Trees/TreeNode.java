@@ -21,14 +21,6 @@ public class TreeNode {
         this.right = right;
     }
 
-    public static void print(TreeNode root){
-        if(root == null){
-            return;
-        }
-        System.out.print(root.val + " ");
-        print(root.left);
-        print(root.right);
-    }
     public static TreeNode buildTreeLevelOrder(Integer[] arr){
         if(arr.length == 0 || arr[0] == null){
             return null;
@@ -57,5 +49,58 @@ public class TreeNode {
             i++;
         }
         return root;
+    }
+
+    //printing preorder root -> left -> right
+    public static void print(TreeNode root){
+        if(root == null){
+            return;
+        }
+        System.out.print(root.val + " ");
+        print(root.left);
+        print(root.right);
+    }
+
+    //printing Inorder left -> root -> right
+    public static void printInOrder(TreeNode root){
+        if(root == null){
+            return;
+        }
+        printInOrder(root.left);
+        System.out.print(root.val + " ");
+        printInOrder(root.right);
+    }
+
+    //printing post order left-> right -> root
+    public static void printPostOrder(TreeNode root){
+        if(root == null){
+            return;
+        }
+        printInOrder(root.left);
+        printInOrder(root.right);
+        System.out.print(root.val + " ");
+    }
+
+    //printing LevelOrder level1 , level2 ...
+    public static void printLevelOrder(TreeNode root){
+        Queue<TreeNode> q = new LinkedList<>();
+
+        q.offer(root);
+        System.out.print(root.val + " ");
+
+        while(!q.isEmpty()){
+            TreeNode current = q.poll();
+
+            if(current.left != null){
+                q.offer(current.left);
+                System.out.print(current.left.val + " ");
+            }
+
+            if(current.right != null){
+                q.offer(current.right);
+                System.out.print(current.right.val + " ");
+            }
+        }
+
     }
 }
