@@ -1,0 +1,51 @@
+package Trees;
+
+//problem , given a tree and subtree
+//so that we have to find that subtree presents in tree or not
+//if found , return true . if not return false.
+
+//i used recursion to solve this problem
+
+public class SubTreeOfAnotherTree {
+    public static void main(String args[]){
+        Integer [] arr = {3,4,5,1,2};
+        Integer [] arr2 = {4,1,2};
+
+        TreeNode root = TreeNode.buildTreeLevelOrder(arr);
+        TreeNode root1 = TreeNode.buildTreeLevelOrder(arr2);
+
+        TreeNode.printLevelOrder(root);
+        System.out.println();
+        TreeNode.printLevelOrder(root1);
+        System.out.println();
+        boolean ans = isSubTree(root, root1);
+        System.out.println("sub tree contains ? :" + ans);
+    }
+
+    public static boolean isSubTree(TreeNode root1, TreeNode root2){
+        if(root1 == null){
+            return false;
+        }
+
+        if(isSameTree(root1,root2)){
+            return true;
+        }
+
+        return isSubTree(root1.left , root2) || isSubTree(root1.right, root2);
+    }
+    public static boolean isSameTree(TreeNode root1, TreeNode root2){
+        if(root1 == null && root2 == null){
+            return true;
+        }
+
+        if(root1 == null || root2 == null){
+            return false;
+        }
+
+        if(root1.val != root2.val){
+            return false;
+        }
+
+        return isSameTree(root1.left, root2.left) && isSameTree(root1.right, root2.right);
+    }
+}
