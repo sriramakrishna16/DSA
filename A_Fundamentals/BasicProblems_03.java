@@ -209,7 +209,7 @@ public class BasicProblems_03{
         } */
 
         //4th pattern
-        int r = 5;
+        /* int r = 5;
         int e = r;
         for(int i = 1; i<=r;i++){
             int c = 5;
@@ -218,7 +218,7 @@ public class BasicProblems_03{
             }
             e--;
             System.out.println();
-        }    
+        }  */   
 
 
         //PATTERN 1 while and while
@@ -263,5 +263,127 @@ public class BasicProblems_03{
             System.out.println();
             i++;
         } */
-    }
+
+        //printing prime numbers
+        /* System.out.println("enter start number");
+        int start = input.nextInt();
+        System.out.println("enter end number");
+        int end = input.nextInt();
+
+        if(start > end){
+            int temp = start;
+            start = end;
+            end = temp;
+        }
+
+        for(int i = start ; i<= end; i++){
+            int count = 0; //2 = 0
+            if(i == 1){
+                continue;
+            }
+            for(int j = 1; j <= i; j++){ //1 <= 2
+                if(i%j==0){
+                    count++; //1+1 = 2
+                }
+            }
+            if(count==2){
+                System.out.print(i + " ");
+            }
+        } */
+
+
+        //printing star pattern in borders
+
+       /*  System.out.println("enter no of rows");
+        int r = input.nextInt();
+        System.out.println("enter no of columns");
+        int c = input.nextInt();
+
+        int i = 1;
+        while(i <= r){
+            int j = 1;
+            while(j <= c){
+                // if(i == 2 || i == 3 || i == 4){
+                //     if(2 <= j && j <= 4){
+                //         System.out.print("  ");
+                //         j++;
+                //         continue;
+                //     }
+                // }
+                // System.out.print("* ");
+                // j++; 
+
+                if(i == 1 || i == r || j == 1 || j == c){
+                    System.out.print("* ");         
+                }else{
+                    System.out.print("  ");
+                }
+                j++; 
+            }
+            System.out.println();
+            i++;
+        } */
+
+
+        //reverse the array and finding big and smallest in array
+
+        /* int [] arr = {10,278,3,430,57};
+
+        int biggest=Integer.MIN_VALUE,smallest=Integer.MAX_VALUE;
+
+        System.out.println("printing array in reverse order :");
+        for(int i = 0 ; i < arr.length ; i++){
+            System.out.print(arr[arr.length - i - 1] + " ");
+
+            if(arr[i] > biggest) 
+                biggest = arr[i];
+            if(arr[i] < smallest){
+                smallest = arr[i];
+            }
+        }
+        System.out.println();
+        System.out.println("Biggest is :" + biggest);
+        System.out.println("Smallest is :" + smallest);   
+
+
+
+        //printing secondBig and secondSmall using array
+
+        int big = Integer.MIN_VALUE,small = Integer.MAX_VALUE;
+
+        int secondBig = 0,secondSmall = 0;
+
+        int [] arr2 = {10,278,278,300,300,3,430,57,430,430};
+        for(int x : arr2){
+            if(x > big){
+                secondBig = big;
+                big = x;
+            }else if(x > secondBig && x != big){
+                secondBig = x;
+            }
+            if(x < small){
+                secondSmall = small;
+                small = x;
+            }else if(x < secondSmall && x != small){
+                secondSmall = x;
+            }
+        }
+        System.out.println("second biggest is :" + secondBig);
+        System.out.println("second small is :" + secondSmall);
+        */
+
+        int arr[] = {1,2,3,4,5};
+        for(int i = 0 ; i<arr.length/2; i++){
+            // if(i == arr.length-i-1){
+            //     break;
+            // }
+            int temp = arr[i]; 
+            arr[i] = arr[arr.length - i - 1]; 
+            arr[arr.length - i - 1] = temp;  
+        }
+        
+        for(int x : arr){
+            System.out.print(x + " ");
+        }
+    } 
 }
