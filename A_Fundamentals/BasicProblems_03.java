@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class BasicProblems_03{
     public static void main(String args[]){
@@ -372,7 +372,9 @@ public class BasicProblems_03{
         System.out.println("second small is :" + secondSmall);
         */
 
-        int arr[] = {1,2,3,4,5};
+        //swapping array
+
+        /* int arr[] = {1,2,3,4,5};
         for(int i = 0 ; i<arr.length/2; i++){
             // if(i == arr.length-i-1){
             //     break;
@@ -384,6 +386,157 @@ public class BasicProblems_03{
         
         for(int x : arr){
             System.out.print(x + " ");
+        } */
+
+        //operations on arrays
+
+        /* int[] arr1 = {1,2,3,4,5};
+        int[] arr2 = arr1;
+        for(int x : arr2){
+            System.out.print(x + " ");
         }
+        System.out.println();
+
+        int[] arr3 = new int[arr1.length];
+        for(int i = 0 ; i<arr1.length; i++){
+            arr3[i] = arr1[i];
+        }
+        for(int y : arr3){
+            System.out.print(y + " ");
+        } */
+
+
+        //extending and adding extra elements to array
+
+        /* int[] arr1 = {1,2,3,4,5};
+
+        int len = arr1.length;
+
+        int[] arr2 = new int[len + 1];
+        for(int i = 0; i < len ; i++){
+            arr2[i] = arr1[i];
+        }
+        arr2[len] = 6;
+
+        System.out.print(" array 2 is : ");
+        for(int a : arr2){
+            System.out.print(a + " ");
+        }
+        System.out.println();
+
+
+        System.out.print("copied list is : ");
+        List<Integer> arr3 = new ArrayList<>();
+
+        for(int i = 0; i < len ; i++){
+            arr3.add(arr1[i]);
+        }
+        arr3.add(6);
+
+        System.out.println(arr3); */
+
+        //insert operation
+        /* int len = 5;
+        int start = 0;
+        int end = len - 1;
+
+        int pos = 2;
+
+        int [] x = new int[len];
+
+        x[end] = 4;  
+        x[start] = 1;
+        x[pos] = 3;
+
+        System.out.println("printing array values : ");
+        for(int val : x){
+            System.out.print(val + " ");
+        }
+        System.out.println(); */
+
+        //deleting array values
+
+        int [] arr = new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+
+        int [] delete = new int[arr.length - 1];
+        
+        System.out.println("enter 1 to delete at start \nenter 2 to delete at end \nenter 3 to delete at specific position \nenter 4 to detele using value ");
+        int choice = input.nextInt();
+
+        /* if(choice == 1){
+            for(int i = 0; i < arr.length - 1; i++){
+                delete[i] = arr[i+1];
+            }
+        }
+        if(choice == 2){
+            for(int i = 0 ; i < arr.length - 1 ; i++){
+                delete[i] = arr[i];
+            }
+        }
+        if(choice == 3){
+            System.out.println("enter the pos to delete :");
+            int delInd = input.nextInt();
+            for(int i = 0 ; i < arr.length - 1 ; i++){
+                if (i < delInd) {
+                    delete[i] = arr[i];
+                } else {
+                    delete[i] = arr[i + 1];
+                }
+            }
+        }
+
+        if(choice == 4){
+            System.out.println("enter value :");
+            int value = input.nextInt();
+            for(int i = 0 ; i < arr.length - 1; i++){
+                if(arr[i] < value){
+                    delete[i] = arr[i];
+                }else{
+                    delete[i] = arr[i + 1];
+                }
+            }
+        } */
+
+
+        int delInd = -1,value = -1;
+        if(choice == 3){
+            System.out.println("enter the pos to delete :");
+            delInd = input.nextInt();
+        }
+        if(choice == 4){
+            System.out.println("enter value :");
+            value = input.nextInt();
+        }
+        for(int i = 0; i<arr.length-1;i++){
+            if(choice == 1){
+                delete[i] = arr[i+1];
+            }
+            if(choice == 2){
+                delete[i] = arr[i];
+            }
+            if(choice == 3){
+                if (i < delInd) {
+                    delete[i] = arr[i];
+                } else {
+                    delete[i] = arr[i + 1];
+                }
+            }
+            if(choice == 4){
+                if(arr[i] < value){
+                    delete[i] = arr[i];
+                }else{
+                    delete[i] = arr[i + 1];
+                }
+            }
+        }
+
+        for(int o : delete){
+            System.out.print(o + " ");
+        }
+        System.out.println();
+
+
+        
+        
     } 
 }
