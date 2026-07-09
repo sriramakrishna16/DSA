@@ -7,6 +7,7 @@ public class CountDigitsThatDivideNumber {
         System.out.println(ans);
     }
 
+    
     public static int findDivisibleDigits(int num){
         int count = 0;
         int dup = num;
