@@ -1,0 +1,25 @@
+package LeetcodeEasy;
+
+public class TypeOfTriangle {
+    public static void main(String args[]){
+        int nums[] = {3,3,3};
+        String ans = findTriangle(nums);
+        System.out.println(ans);
+    }
+    public static String findTriangle(int [] nums){
+        if(nums.length > 3) return "none";
+        int a = nums[0];
+        int b = nums[1];
+        int c = nums[2];
+        if(a + b <= c || a + c <= b || b + c <= a){
+            return "none";
+        }
+        if(a == b && b ==c && c == a){
+            return "equilateral";
+        }
+        if(a==b || b==c || c==a){
+            return "isosceles";
+        }
+        return "scalene";
+    }
+}
