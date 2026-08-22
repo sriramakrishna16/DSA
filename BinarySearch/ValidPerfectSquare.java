@@ -1,14 +1,18 @@
-//we have to arrange the given n coins into staircase model using rows
-// and return the successfully completed rows.
+//return true if the num is perfect square
 
-//ex : if n is 5 , 1 11 111(x) , the third row is not possible , so only 2 rows.
 public class ValidPerfectSquare{
     public static void main(String [] args){
-        int num = 16;
+        int num = 9;
         boolean ans = isPerfectSquare(num);
         System.out.println(ans);
     }
     public static boolean isPerfectSquare(int num){
+        //using square root function
+        // double ans = Math.sqrt(num);
+        // if(ans == (int)ans) return true;
+        // return false;
+
+        // without using squareroot function
         int left = 1;
         int right = num;
         while(left <= right){
