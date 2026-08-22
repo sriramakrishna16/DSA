@@ -1,3 +1,7 @@
+//we have to arrange the given n coins into staircase model using rows
+// and return the successfully completed rows.
+
+//ex : if n is 5 , 1 11 111(x) , the third row is not possible , so only 2 rows.
 public class ValidPerfectSquare{
     public static void main(String [] args){
         int num = 16;
